@@ -1,0 +1,11 @@
+# Learnable-assessment
+def nth_most_rare(arr, n):
+    counts = {}
+    for num in arr:
+        if num in counts:
+            counts[num] += 1
+        else:
+            counts[num] = 1
+    rare_nums = sorted(counts, key=counts.get)
+    return rare_nums[n-1]
+print(nth_most_rare([5,4,5,4,5,4,4,5,3,3,3,2,2, 1,5], 2))
